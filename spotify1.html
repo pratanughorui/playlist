@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background: #222f3e;
+      }
+      .main {
+        height: 90vh;
+        width: 85%;
+        margin-top: 2.5%;
+        margin-left: 8%;
+        display: flex;
+
+        flex-wrap: wrap;
+      }
+      .left {
+        width: 25%;
+        height: 90%;
+        background: rgba(172, 170, 170, 0.095);
+      }
+      .right {
+        width: 74%;
+        height: 90%;
+        background: rgba(110, 110, 110, 0.095);
+      }
+      .ground {
+        width: 99%;
+        height: 10%;
+        background: rgba(172, 170, 170, 0.095);
+        display: flex;
+      }
+      .left_upper {
+        height: 30%;
+        width: 100%;
+      }
+      .left_upper h3 {
+        color: azure;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 22px;
+        margin-left: 5%;
+        margin-top: 6%;
+        letter-spacing: 3px;
+        font-weight: 1000;
+      }
+      .left_upper i {
+        margin-left: 5%;
+      }
+      .left_upper p {
+        margin-top: 7%;
+        color: rgb(107, 227, 227);
+      }
+      .c {
+        margin-top: 7%;
+        color: rgb(107, 227, 227);
+      }
+      .left_upper p {
+        display: inline;
+        margin: 1%;
+        margin-left: 3%;
+        font-size: 18px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .left_upper ul {
+        list-style-type: circle;
+        margin-left: 10%;
+        margin-top: 7%;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        color: rgb(93, 94, 95);
+      }
+      .left_upper li {
+        margin-top: 6%;
+      }
+      .left_lower {
+        height: 65%;
+        width: 100%;
+      }
+      .left_lower ul {
+        color: rgb(93, 94, 95);
+      }
+      .p {
+        color: aliceblue;
+      }
+      .item img {
+        width: 15%;
+        object-fit: cover;
+      }
+      .item {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 5%;
+        cursor: pointer;
+      }
+      .song_list {
+        list-style-type: disc;
+        color: beige;
+      }
+      .item h3 {
+        color: aliceblue;
+        font-size: 15px;
+      }
+      /*---------------------------ground----------------------------------*/
+      .animation {
+        width: 17%;
+        height: 100%;
+        display: flex;
+      }
+      .stk {
+        width: 17%;
+        height: 100%;
+      }
+      .song_track {
+        width: 45%;
+        height: 100%;
+        margin-left: 4%;
+      }
+      .sound_track {
+        border: 1px solid wheat;
+        width: 20%;
+        height: 100%;
+      }
+      .anim {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 3%;
+      }
+      .wave {
+        width: 5px;
+        height: 25px;
+        background-color: rgb(107, 227, 227);
+        margin-left: 4px;
+        border-radius: 4px;
+        animation: waves 1s linear infinite;
+        transform-origin: bottom;
+      }
+      .wave_design {
+        animation: waves 1s linear infinite;
+      }
+      .xyz {
+        background-color: #222f3e;
+      }
+      @keyframes waves {
+        0% {
+          transform: scale(0);
+        }
+        50% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(0);
+        }
+      }
+      .wave:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .wave:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .wave:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      .wave:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+      .song_details {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 4%;
+      }
+      .song_details img {
+        width: 18%;
+        object-fit: cover;
+        height: 60%;
+        margin-left: 6%;
+      }
+      .song_details p {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        margin-left: 6%;
+        color: aliceblue;
+        font-size: 15px;
+      }
+      .stk {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .stk i {
+        color: aliceblue;
+        font-size: 22px;
+      }
+      .song_track {
+        display: flex;
+        align-items: center;
+      }
+      .range_div {
+        height: 3px;
+        width: 85%;
+        background-color: #3f4246;
+        margin-left: 1%;
+      }
+      .song_track h4 {
+        margin-left: 1%;
+        color: aliceblue;
+      }
+      .range {
+        height: 100%;
+
+        background-color: rgb(107, 227, 227);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="left">
+        <div class="left_upper">
+          <h3>Playlists</h3>
+          <i class="fa-solid fa-2x c fa-headphones-simple"> </i>
+
+          <p>Playlist</p>
+          <ul>
+            <li>Lastlist</li>
+            <li>Recomended</li>
+          </ul>
+        </div>
+        <div class="left_lower">
+          <ul class="song_list">
+            <li class="item" id="0">
+              <img src="image/kesariyan.jpg" alt="" />
+              <h3>Kesariyan</h3>
+              <i class="fa-solid fa-2x p fa-circle-play"></i>
+              <audio src="song/kesariyan.mp3"></audio>
+            </li>
+            <li class="item" id="1">
+              <img src="image/baynabilashini.jpg" alt="" />
+              <h3>baynabilashini</h3>
+              <i class="fa-solid fa-2x p fa-circle-play"></i>
+              <audio src="song/Baaynabilashi.mp3"></audio>
+            </li>
+            <li class="item" id="2">
+              <img src="image/jodi boli.jpg" alt="" />
+              <h3>jodi boli</h3>
+              <i class="fa-solid fa-2x p fa-circle-play"></i>
+              <audio src="song/Jodi Boli.mp3"></audio>
+            </li>
+            <li class="item" id="3">
+              <img src="image/tu chahiyan.jpg" alt="" />
+              <h3>tu chahiyan</h3>
+              <i class="fa-solid fa-2x p fa-circle-play"></i>
+              <audio src="song/tu chahiye.mp3"></audio>
+            </li>
+            <li class="item" id="4">
+              <img src="image/tumsehi.jpg" alt="" />
+              <h3>tum sehi</h3>
+              <i class="fa-solid fa-2x p fa-circle-play"></i>
+              <audio src="song/tum se hi.mp3"></audio>
+            </li>
+            <li class="item" id="5">
+              <img src="image/chand baliyan.jpg" alt="" />
+              <h3>chand baliyan</h3>
+              <i class="fa-solid fa-2x p fa-circle-play"></i>
+              <audio src="song/Chaand Baaliyan.mp3"></audio>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="right"></div>
+      <div class="ground">
+        <div class="animation">
+          <div class="anim">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+          </div>
+          <div class="song_details">
+            <!-- <img src="image/kesariyan.jpg" alt="" />
+            <p>
+              Kesariyan <br />
+              Arijit singh
+            </p> -->
+          </div>
+        </div>
+        <div class="stk">
+          <i class="fa-solid fa-music"></i>
+          <i class="fa-solid fa-backward"></i>
+          <i class="fa-solid fa-circle-play" id="play"></i>
+          <i class="fa-solid fa-forward" id="forward"></i>
+          <i class="fa-solid fa-download"></i>
+        </div>
+        <div class="song_track">
+          <h4>0.00</h4>
+          <div class="range_div">
+            <div class="range" id="main_range"></div>
+          </div>
+          <h4>4.30</h4>
+        </div>
+        <div class="sound_track"></div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/4334081fd1.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    //---------------------------------play pause button----------------------------//
+    let current_song = "0";
+    //var song;
+    const playm = document.getElementById("play");
+    //const song = document.querySelector(".song_list").children[0].children[3];
+
+    let is_playing = true;
+    function play_music(song) {
+      is_playing = false;
+      current_song = song.parentNode.id;
+      //  console.log(song.parentNode.children[1]);
+      var a = song.parentNode.children[0];
+      var b = song.parentNode.children[1];
+      add_song_details(a, b);
+      song.play();
+      playm.classList.replace("fa-circle-play", "fa-circle-pause");
+      play_tracker();
+    }
+    const pause_music = (song) => {
+      is_playing = true;
+      song.pause();
+      playm.classList.replace("fa-circle-pause", "fa-circle-play");
+    };
+
+    playm.addEventListener("click", () => {
+      if (is_playing) {
+        var song = document.getElementById(current_song).children[3];
+        play_music(song);
+      } else {
+        var song = document.getElementById(current_song).children[3];
+        pause_music(song);
+      }
+    });
+    //---------------------------------forward button----------------------------//
+    const play_next = document.getElementById("forward");
+    play_next.addEventListener("click", () => {
+      if (is_playing == false) {
+        var song = document.getElementById(current_song).children[3];
+        pause_music(song);
+      }
+      if (current_song == "6") {
+        current_song = "0";
+      } else {
+        current_song++;
+      }
+      var song = document.getElementById(current_song).children[3];
+      play_music(song);
+    });
+    //-----------------------------------click on a perticular song-------------------//
+    const list_song = document.querySelectorAll(".item");
+    for (var i = 0; i < list_song.length; i++) {
+      const item_play = list_song[i].addEventListener("click", play_iteam);
+    }
+    function play_iteam() {
+      //
+      if (is_playing == false) {
+        var song = document.getElementById(current_song).children[3];
+        pause_music(song);
+        song.previousElementSibling.classList.replace(
+          "fa-circle-pause",
+          "fa-circle-play"
+        );
+      }
+      var song = this.children[3];
+      play_music(song);
+      var s = this.children[2];
+      s.classList.replace("fa-circle-play", "fa-circle-pause");
+    }
+    //-------------------------------------control using keyboard key----------------------//
+    document.addEventListener("keydown", (e) => {
+      if (e.key == " ") {
+        if (is_playing == false) {
+          var song = document.getElementById(current_song).children[3];
+          pause_music(song);
+        } else {
+          var song = document.getElementById(current_song).children[3];
+          play_music(song);
+        }
+      } else if (e.key == "ArrowRight") {
+        if (is_playing == false) {
+          var song = document.getElementById(current_song).children[3];
+          pause_music(song);
+        }
+        if (current_song == "6") {
+          current_song = "0";
+        } else {
+          current_song++;
+        }
+        var song = document.getElementById(current_song).children[3];
+        play_music(song);
+      }
+    });
+    //--------------------------------------------song track range-----------------------//
+    /*song.addEventListener("timeupdate", (event) => {
+      const { currentTime, duration } = event.srcElement;
+      let progress_time = (currentTime / duration) * 100;
+      progress.style.width = `${progress_time}%`;
+    });*/
+    function play_tracker() {
+      const progress = document.getElementById("main_range");
+      var song = document.getElementById(current_song).children[3];
+      song.addEventListener("timeupdate", (event) => {
+        const { currentTime, duration } = event.srcElement;
+        let progress_time = (currentTime / duration) * 100;
+        progress.style.width = `${progress_time}%`;
+      });
+    }
+    //------------------------ song details in the ground part------------------//
+    var current_song_image = 0;
+    var current_song_name = 0;
+    function add_song_details(a, b) {
+      const t = document.querySelector(".song_details");
+      const x = document.createElement("img");
+
+      x.setAttribute("src", (src = a.src));
+      const y = document.createElement("p");
+      y.innerHTML = b.innerHTML;
+
+      //t.appendChild(x);
+      if (current_song_image == 0 && current_song_name == 0) {
+        t.appendChild(x);
+        t.appendChild(y);
+        current_song_image = x;
+        current_song_name = y;
+      } else {
+        t.removeChild(current_song_image);
+        t.removeChild(current_song_name);
+        t.appendChild(x);
+        t.appendChild(y);
+        current_song_name = y;
+        current_song_image = x;
+      }
+    }
+    //----------------------animation part----------------------//
+    const animation_design = document.querySelector(".anim").children;
+    console.log(animation_design.style);
+    animation_design.style.animation = "waves 1s linear infinite";
+  </script>
+</html>
