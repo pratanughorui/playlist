@@ -126,7 +126,6 @@
         margin-left: 4%;
       }
       .sound_track {
-        border: 1px solid wheat;
         width: 20%;
         height: 100%;
       }
@@ -202,6 +201,7 @@
       .stk i {
         color: aliceblue;
         font-size: 22px;
+        cursor: pointer;
       }
       .song_track {
         display: flex;
@@ -220,6 +220,26 @@
       .range {
         height: 100%;
 
+        background-color: rgb(107, 227, 227);
+      }
+      .sound_track {
+        display: flex;
+        align-items: center;
+      }
+      .sound_track i {
+        color: aliceblue;
+        font-size: 22px;
+        margin-left: 8%;
+      }
+      .sound_range {
+        height: 3px;
+        width: 60%;
+        margin-left: 5%;
+        background-color: #3f4246;
+      }
+      .s_range {
+        height: 100%;
+        width: 50%;
         background-color: rgb(107, 227, 227);
       }
     </style>
@@ -310,7 +330,12 @@
           </div>
           <h4>4.30</h4>
         </div>
-        <div class="sound_track"></div>
+        <div class="sound_track">
+          <i class="fa-solid fa-1x fa-volume-high"></i>
+          <div class="sound_range">
+            <div class="s_range"></div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
